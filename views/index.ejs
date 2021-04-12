@@ -1,0 +1,27 @@
+<%- include('./includes/head.ejs')%>
+   <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+   <div class="content">
+      <div class="headers">
+   <h1 class="general-header">ORDERS</h1>
+   <h2 class="second-header">COMPANY</h2>
+      </div>
+
+   <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+   </p>
+
+
+   <div class="container">
+   <% products.forEach(product => {%>
+   <a href="/shop/product/<%=product.id%>"> 
+   <div class="product-div">
+   <h1 class="product"><%=product.title%></h1>
+   <img src="https://blog.hostseo.com/wp-content/uploads/2019/06/google-site-verification.png" alt="">
+   </div>
+   </a>
+   <%});%>
+</div>
+</body>
+</html>

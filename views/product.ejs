@@ -1,0 +1,15 @@
+<%- include('./includes/head.ejs')%>
+   <link rel="stylesheet" href="/css/product.css">
+   <link rel="stylesheet" href="/css/main.css">
+</head>
+
+
+<body>
+   <h1><%= product.title %></h1>
+   <h1><%= product.product_describe %></h1>
+   <h1><%= product.price %>$</h1>
+   <form action="buy/<%= product.id %>" method="POST">
+   <button type="submit">BUY</button>
+   </form>
+</body>
+</html>

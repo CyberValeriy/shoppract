@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <form action="/shop/confirmed" method="POST">
+      <input type="text" placeholder="Your first name..." name="fname">
+      <input type="text" placeholder="Your last name..." name="lname">
+      <input type="text" placeholder="Your e-mail..." name="email">
+      <input type="text" placeholder="Your iphone number..." name="phone">
+      <!--tut pro tovar-->
+      <!--here..-->
+      <!--korotkiy opis or price-->
+
+      <input type="hidden" value="<%= product.title%>" name="title">
+      <input type="hidden" value="<%= product.id%>" name="prodID">
+
+      <button type="submit">Confirm order</button>
+      <!--це все запишеться в ДБ як замовлення-->
+   </form>
+</body>
+</html>
