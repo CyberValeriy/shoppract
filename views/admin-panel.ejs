@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script src="/js/auth.js" defer></script>
+</head>
+<body>
+
+<form action="/shop/add-new-product" method="POST">
+   <input type="text" placeholder="title" name="title">
+   <input type="text" placeholder="imageURL" name="imageURL">
+   <input type="text" placeholder="price" name="price">
+   <input type="text" placeholder="describe" name="description">
+   <button type="submit">
+      Add Product
+   </button>
+</form>
+
+<form action="/shop/delete-product" method="POST">
+   <input type="text" placeholder="Product name" name="title">
+   <button type="submit">
+      Delete Product
+   </button>
+</form>
+   
+</body>
+</html>

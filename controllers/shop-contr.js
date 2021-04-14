@@ -3,7 +3,6 @@ const Product = require("../models/product");
 
 exports.shopHandler = (req, res, next) => { // fetch all prods and show them...
    Product.findAll().then(data => {
-      console.log(data);
       res.render("index.ejs", { products: data});
    });
 
