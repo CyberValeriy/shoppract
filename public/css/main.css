@@ -1,8 +1,8 @@
 body{
-   background-color: #1F2833;
+   background-color: #151926;
    color: #C5C6C7;
    text-align: center;
-   padding: 0 10rem 0 10rem;
+   padding: 0 13% 0 13%;
    font-family: 'Viga', sans-serif;
 }
 
@@ -61,6 +61,12 @@ body{
 
 .content{
    background-color:#1F2833;
+   height: 100%;
+   padding: 0;
+   margin: 0;
+   overflow: hidden;
+   border-radius: 20px; 
+   box-shadow: 10px 0 10px 5px rgba(0, 0, 0, 0.2), -10px 0 10px 5px rgba(0, 0, 0, 0.2);
 }
 
 .general-header{
@@ -79,6 +85,7 @@ line-height: 0.1rem;
    padding-top: 4rem;
    align-items: center;
    justify-content: center;
+   margin: 50px;
    
 
    display: grid;
@@ -87,22 +94,33 @@ line-height: 0.1rem;
    grid-template-rows: repeat(3, 50px);
 }
 
+.container .product-div:hover{
+   background-color: #ff1493;
+   transform: scale(1.05);
+}
+
 img{
    display: block;
    margin-left: auto;
    margin-right: auto;
    width: 70%;
-   margin-bottom: 20px;
 }
 
 .product-div{
-   border: 1px solid black;
+   background-color: #2f5ea3;
+   height: 100%;
+   width: 100%;
+   transition: 0.6s;
+   min-height: 250px;
+   border-radius: 5px;
+   max-height: 300px;
 }
 
-.product{
+.product, .product-price{
    align-self: center;
    justify-self: center;
 }
+
 a:link{
    color:white;
 }
@@ -115,32 +133,33 @@ a{
    text-decoration:none;
 }
 
-.product-div:hover{
-   background-color:dimgrey;
-}
-
 .main-text{
    text-align: justify;
    margin-bottom: 5rem;
+   margin-left: 10%;
+   margin-right: 10%;
 }
 
-section{
+header{
+   display: flex;
    position: relative;
    width: 100%;
-   height: 100px;
+   height: 250px;
    overflow: hidden;
+   border-radius: 20px 20px 0 0;
 }
 
-section .wave{
+header .upperWave{
    position: absolute;
-   bottom: 0;
+   top: 0;
+   height: 100%;
    left: 0;
    width: 100%;
-   background: url(lowerWave.png);
-   background-size: 1000px 100px;
+   background-image: url(upperWave.png);
+   background-size: 1000px 250px;
 }
 
-section .wave.wave1{
+header .upperWave.wave1{
    animation: wavesAnimation 30s linear infinite;
    z-index: 1000;
    opacity: 1;
@@ -148,28 +167,79 @@ section .wave.wave1{
    bottom: 0;
 }
 
-section .wave.wave2{
+header .upperWave.wave2{
    animation: wavesAnimation2 15s linear infinite;
    z-index: 999;
    opacity: 0.5;
    animation-delay: -5s;
-   bottom: 10px;
+   bottom: 5px;
 }
 
-section .wave.wave3{
+header .upperWave.wave3{
    animation: wavesAnimation 30s linear infinite;
    z-index: 988;
    opacity: 0.2;
    animation-delay: -2s;
-   bottom: 15px;
+   bottom: 10px;
 }
 
-section .wave.wave4{
+header .upperWave.wave4{
    animation: wavesAnimation2 5s linear infinite;
    z-index: 997;
    opacity: 0.7;
    animation-delay: -5s;
-   bottom: 20px;
+   bottom: 15px;
+}
+
+footer{
+   display: flex;
+   position: relative;
+   width: 100%;
+   height: 250px;
+   overflow: hidden;
+   border-radius: 0 0 20px 20px;
+}
+
+footer .lowerWave{
+   position: absolute;
+   bottom: 0;
+   height: 100%;
+   left: 0%;
+   width: 100%;
+   background-image: url(lowerWave.png);
+   background-size: 1000px 250px;
+}
+
+footer .lowerWave.wave1{
+   animation: wavesAnimation 30s linear infinite;
+   z-index: 1000;
+   opacity: 1;
+   animation-delay: 0s;
+   bottom: 0;
+}
+
+footer .lowerWave.wave2{
+   animation: wavesAnimation2 15s linear infinite;
+   z-index: 999;
+   opacity: 0.5;
+   animation-delay: -5s;
+   bottom: 5px;
+}
+
+footer .lowerWave.wave3{
+   animation: wavesAnimation 30s linear infinite;
+   z-index: 988;
+   opacity: 0.2;
+   animation-delay: -2s;
+   bottom: 10px;
+}
+
+footer .lowerWave.wave4{
+   animation: wavesAnimation2 5s linear infinite;
+   z-index: 997;
+   opacity: 0.7;
+   animation-delay: -5s;
+   bottom: 15px;
 }
 
 @keyframes wavesAnimation{
@@ -225,6 +295,7 @@ section .wave.wave4{
          padding: 0 3rem 0 3rem;
       }
 }
+
 @media (max-width: 400px){
    .general-header{
       font-size: 3rem;

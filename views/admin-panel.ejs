@@ -8,23 +8,69 @@
    <script src="/js/auth.js" defer></script>
 </head>
 <body>
+   <style>
+      table, th, td {
+  border: 1px solid black;
+}
+   </style>
 
 <form action="/shop/add-new-product" method="POST">
    <input type="text" placeholder="title" name="title">
    <input type="text" placeholder="imageURL" name="imageURL">
-   <input type="text" placeholder="price" name="price">
+   <input type="number" placeholder="price" name="price">
    <input type="text" placeholder="describe" name="description">
    <button type="submit">
       Add Product
    </button>
 </form>
 
-<form action="/shop/delete-product" method="POST">
-   <input type="text" placeholder="Product name" name="title">
-   <button type="submit">
-      Delete Product
-   </button>
-</form>
+<h1>Products</h1>
+<div class="orders">
+   <table>
+      <tr>
+         <th>PRODUCTS</th>
+       </tr>
+   <% products.forEach(product => {%>
+      <form action="/shop/delete-product" method="POST">
+   <input type="hidden" value="<%= product.title %>" name="title">
+   <input type="hidden" value="<%= product.description %>" name="description">
+      <tr>
+        <th><%= product.title %></th>
+        <th><button type = "submit">Delete</button></th>
+      </tr>
+   </form>
+   <% });%>
+   </div>
+   </table>
+
+
+
+
+
+<h1>Orders</h1>
+<div class="orders">
+   <table>
+      <tr>
+         <th>ORDERS</th>
+         <th>CLIENTS</th>
+         <th>EMAILS</th>
+         <th>PHONES</th>
+       </tr>
+   <% orders.forEach(order => {%>
+   <form action="/shop/delete-order" method ='POST'>
+   <input type="hidden" value="<%= order.title %>" name="title">
+   <input type="hidden" value="<%= order.phone %>" name="phone">
+      <tr>
+        <th><%= order.title %></th>
+        <th><%= order.fname %><%= order.lname %></th>
+        <th><%= order.email %></th>
+        <th><%= order.phone %></th>
+        <th><button type = "submit">Delete</button></th>
+      </tr>
+   </form>
+   <% });%>
+</table>
+</div>
    
 </body>
 </html>
