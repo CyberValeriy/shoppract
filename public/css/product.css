@@ -1,0 +1,111 @@
+body{
+    background-color: #151926;
+    color: #C5C6C7;
+    text-align: center;
+    padding: 0 15% 0 15%;
+    font-family: 'Viga', sans-serif;
+}
+
+img{
+    align-self: center;
+    max-width: 600px;
+    max-height: 450px;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+}
+
+#scrollpath{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+}
+ 
+#progressbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    animation: animate 5s linear infinite;
+}
+ 
+@keyframes animate{
+    0%, 100%{
+       filter: hue-rotate(0deg);
+    }
+    50%{
+       filter: hue-rotate(360deg);
+    }
+}
+ 
+#progressbar::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(10px);
+}
+ 
+#progressbar::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(30px);
+}
+
+.buy-button{
+    font-size: 32px;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #755bea, #ff72c0);
+    color: #fff;
+    width: 200px;
+    height: 60px;
+    border: 0;
+    transition: 0.5s;
+    margin: 10px;
+}
+
+.buy-button:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.content{
+    background-color: #1F2833;
+    border-radius: 40px;
+    height: 100%;
+    width: 100%;
+    box-shadow: 10px 0 10px 5px rgba(0, 0, 0, 0.2), -10px 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.product-title{
+    font-size: 42px;
+    font-weight: 300;
+    color: #66FCF1;
+}
+
+.description{
+    padding: 0 10% 0 10%;
+    font-size: 20px;
+    font-weight: 300;
+    color: #45A29E;
+}
+
+.price{
+    font-size: 34px;
+    color: #fff;
+    font-weight: 500;
+}

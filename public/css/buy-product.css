@@ -1,0 +1,119 @@
+body{
+    background-color: #151926;
+    color: #C5C6C7;
+    text-align: center;
+    padding: 0 15% 0 15%;
+    font-family: 'Viga', sans-serif;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+}
+
+.content{
+    background-color:#1F2833;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px; 
+    box-shadow: 10px 0 10px 5px rgba(0, 0, 0, 0.2), -10px 0 10px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label{
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+.header{
+    color: #66FCF1;
+    font-weight: 300;
+    font-size: 34px;
+}
+
+.form div{
+    margin: 20px;
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+    width: 80%;
+}
+
+.input-form{
+    width: 100%;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+}
+
+.input-form input{
+    width: 100%;
+    height: 100%;
+    color: #C5C6C7;
+    padding-top: 13px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.input-form label{
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #fff;
+}
+
+.input-form label::after{
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 3px solid #66FCF1;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.input-content{
+    position: absolute;
+    bottom: 5px;
+    left: 0%;
+    transition: all 0.3s ease;
+}
+
+.input-form input:focus + .input-label .input-content, 
+.input-form input:valid + .input-label .input-content{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #66FCF1;
+}
+
+.input-form input:focus + .input-label::after, 
+.input-form input:valid + .input-label::after{
+    transform: translateX(0%);
+}
+
+.confirm-button{
+    font-size: 20px;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #755bea, #ff72c0);
+    color: #fff;
+    width: 200px;
+    height: 60px;
+    border: 0;
+    transition: 0.5s;
+    margin: 10px;
+}
+
+.confirm-button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}

@@ -1,0 +1,16 @@
+<%- include('./includes/head.ejs')%>
+<link rel="stylesheet" href="css/log-in.css">
+</head>
+<body>
+<div class="content">
+   <form action="/" method="POST">
+   <input type="text" placeholder="E-mail" name = "email" required>
+   <input type="password" placeholder="Password" name="password" required>
+   <div class="div-button">
+   <button class="btn-grad" type="submit">LogIn</button>
+   </div>
+   <a class="link" href="/signUp"><p class="link-text">You don't have an account yet?Register</p></a>
+   </form>
+</div>
+</body>
+</html>

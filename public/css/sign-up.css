@@ -1,0 +1,153 @@
+body{
+   padding-top: 200px;
+   background-color:#151926;
+   font-family: 'Viga',sans-serif;
+ }
+ .btn-grad {background-image: linear-gradient(to right, #24C6DC 0%, #514A9D  51%, #24C6DC  100%)}
+ .btn-grad {
+ padding: 20px 30px;
+ margin-top: 20px;
+ text-align: center;
+ text-transform: uppercase;
+ transition: 0.5s;
+ background-size: 200% auto;
+ color: white;            
+ border-radius: 30px;
+ border-style: hidden;
+ display: block;
+ font-size: 30px;
+ }
+
+ span{
+    border:1px solid;
+    border-radius:20px;
+    padding: 10px;
+    color: rgb(212, 212, 212);
+    background-color:#2cb8ca;
+   }
+
+ a{
+    color: rgb(212, 212, 212);
+    text-decoration: none;
+ }
+ a:visited{
+   color:rgb(212, 212, 212);
+   text-decoration: none;
+ }
+ a:active{
+   color:white;
+   text-decoration: none;
+ }
+
+ span,a:hover{
+   color: #2cb8ca;
+   background-color: #151926;
+ }
+ 
+ .btn-grad:hover {
+ background-position: right center;
+ color: #fff;
+ text-decoration: none;
+ }
+ 
+ .content{
+   margin: auto;
+   width: 50%;
+ }
+ 
+ .div-button{
+   margin:auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ input{
+   color:white;
+   width: 100%;
+   border-width:0px;
+   border:none;
+   font-size: 50px;
+   background: 
+       linear-gradient(#000, #000) center bottom 5px /calc(100% - 10px) 2px no-repeat;
+    padding-left: 10px;
+   padding-bottom: 10px;
+   margin-top: 20px;
+ }
+
+ input::placeholder{
+   color:#24C6DC;
+ }
+
+ input::-ms-input-placeholder{
+   color:#24C6DC;
+ }
+ 
+   input:focus{
+   outline: none;
+   background: 
+   linear-gradient(#24C6DC,#24C6DC) center bottom 5px /calc(100% - 10px) 2px no-repeat;
+ }
+ 
+ .btn-grad:focus{
+   outline: none;
+ 
+ }
+ .btn-grad:active{
+   padding: 18px 48px;
+ }
+ .disabled{
+   background-color: grey;
+   padding: 20px 50px;
+ text-align: center;
+ text-transform: uppercase;
+ transition: 0.5s;
+ background-size: 200% auto;
+ color: white;            
+ box-shadow: 0 0 20px #eee;
+ border-radius: 30px;
+ border-style: hidden;
+ display: block;
+ font-size: 50px;
+ }
+ .disabled:focus{
+   outline: none;
+ }
+ 
+ input:hover{
+   background: 
+   linear-gradient(#24C6DC,#24C6DC) center bottom 5px /calc(100% - 10px) 2px no-repeat;
+ }
+ 
+ @media (min-height : 700px) {
+   .nameDiv{
+     margin: auto;
+     width: 100%;
+     text-align: center;
+     margin-top: 650px;
+     font-weight: 700;
+   }
+ }
+ 
+ .link{
+   text-decoration: none; 
+ }
+ .link-text{
+color:white;
+text-align: center;
+ }
+
+
+ .link:focus{
+    color:white;
+ }
+ .link:active{
+   color:white;
+}
+
+.link:visited{
+   color:white;
+}
+.link-text:hover{
+   color:#24C6DC;
+}

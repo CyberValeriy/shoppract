@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+<%- include('./includes/head.ejs')%>
 </head>
 <body>
    <form action="/shop/confirmed" method="POST">
@@ -15,8 +9,6 @@
       <!--tut pro tovar-->
       <!--here..-->
       <!--korotkiy opis or price-->
-
-      <input type="hidden" value="<%= product.title%>" name="title">
       <input type="hidden" value="<%= product.id%>" name="prodID">
 
       <button type="submit">Confirm order</button>

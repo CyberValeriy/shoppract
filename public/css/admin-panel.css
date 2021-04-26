@@ -1,0 +1,192 @@
+body{
+    background-color: #151926;
+    color: #C5C6C7;
+    text-align: center;
+    padding: 0 15% 0 15%;
+    font-family: 'Viga', sans-serif;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+}
+
+#scrollpath{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+}
+ 
+#progressbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    animation: animate 5s linear infinite;
+}
+ 
+@keyframes animate{
+    0%, 100%{
+       filter: hue-rotate(0deg);
+    }
+    50%{
+       filter: hue-rotate(360deg);
+    }
+}
+ 
+
+#progressbar::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(10px);
+}
+ 
+#progressbar::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(30px);
+}
+
+.content{
+    background-color:#1F2833;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px; 
+    box-shadow: 10px 0 10px 5px rgba(0, 0, 0, 0.2), -10px 0 10px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    color: #66FCF1;
+    font-size: 34px;
+    /* font-weight: 300; */
+}
+
+table{
+    border: 1px solid #fff;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.headers{
+    color: #66FCF1;
+}
+
+.delete-button{
+    font-size: 15px;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #755bea, #ff72c0);
+    color: #fff;
+    width: 100px;
+    height: 30px;
+    border: 0;
+    transition: 0.5s;
+    margin: 10px;
+}
+
+.delete-button:hover{
+    cursor: pointer;
+    transform: scale(1.09);
+}
+
+.add-product-form div{
+    margin: 20px;
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+    width: 80%;
+}
+
+.input-form{
+    width: 100%;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+}
+
+.input-form input{
+    width: 100%;
+    height: 100%;
+    color: #C5C6C7;
+    padding-top: 12px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 18px;
+}
+
+.input-form label{
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #fff;
+}
+
+.input-form label::after{
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 3px solid #66FCF1;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.input-content{
+    position: absolute;
+    bottom: 5px;
+    left: 0%;
+    transition: all 0.3s ease;
+}
+
+.input-form input:focus + .input-label .input-content, 
+.input-form input:valid + .input-label .input-content{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #66FCF1;
+}
+
+.input-form input:focus + .input-label::after, 
+.input-form input:valid + .input-label::after{
+    transform: translateX(0%);
+}
+
+.add-button{
+    font-size: 20px;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #755bea, #ff72c0);
+    color: #fff;
+    width: 200px;
+    height: 60px;
+    border: 0;
+    transition: 0.5s;
+    margin: 10px;
+}
+
+.add-button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}

@@ -1,76 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+<%- include('./includes/head.ejs')%>
+   <link rel="stylesheet" href="/css/admin-panel.css">
    <script src="/js/auth.js" defer></script>
+   <script src="/js/scrollbar.js" defer></script>
 </head>
 <body>
-   <style>
-      table, th, td {
-  border: 1px solid black;
-}
-   </style>
+   <div id="progressbar"></div>
+   <div id="scrollpath"></div>
+   <div class="content">
+      <form class="add-product-form" action="/shop/add-new-product" method="POST" enctype="multipart/form-data">
+         <h1>Add product</h1>
+         <div class="input-form">
+            <input type="text" name="title" maxlength="255" required>
+            <label class="input-label" for="title">
+               <span class="input-content">Title</span>
+            </label>
+         </div>
 
-<form action="/shop/add-new-product" method="POST">
-   <input type="text" placeholder="title" name="title">
-   <input type="text" placeholder="imageURL" name="imageURL">
-   <input type="number" placeholder="price" name="price">
-   <input type="text" placeholder="describe" name="description">
-   <button type="submit">
-      Add Product
-   </button>
-</form>
+         
+         <div class="input-form">
+            <input type="number" name="price" required>
+            <label class="input-label" for="price">
+               <span class="input-content">Price</span>
+            </label>
+         </div>
+         
+         <div class="input-form">
+            <input type="text" name="description" maxlength="255" required>
+            <label class="input-label" for="description">
+               <span class="input-content">Description</span>
+            </label>
+         </div>
 
-<h1>Products</h1>
-<div class="orders">
-   <table>
-      <tr>
-         <th>PRODUCTS</th>
-       </tr>
-   <% products.forEach(product => {%>
-      <form action="/shop/delete-product" method="POST">
-   <input type="hidden" value="<%= product.title %>" name="title">
-   <input type="hidden" value="<%= product.description %>" name="description">
-      <tr>
-        <th><%= product.title %></th>
-        <th><button type = "submit">Delete</button></th>
-      </tr>
-   </form>
-   <% });%>
-   </div>
-   </table>
-
-
-
-
-
-<h1>Orders</h1>
-<div class="orders">
-   <table>
-      <tr>
-         <th>ORDERS</th>
-         <th>CLIENTS</th>
-         <th>EMAILS</th>
-         <th>PHONES</th>
-       </tr>
-   <% orders.forEach(order => {%>
-   <form action="/shop/delete-order" method ='POST'>
-   <input type="hidden" value="<%= order.title %>" name="title">
-   <input type="hidden" value="<%= order.phone %>" name="phone">
-      <tr>
-        <th><%= order.title %></th>
-        <th><%= order.fname %><%= order.lname %></th>
-        <th><%= order.email %></th>
-        <th><%= order.phone %></th>
-        <th><button type = "submit">Delete</button></th>
-      </tr>
-   </form>
-   <% });%>
-</table>
-</div>
-   
+         <div class="input-file">
+            <input type="file" maxlength="255" name="image" id="image">
+               <span class="input-content">Image URL</span>
+            </label>
+         </div>
+         
+         <button class="add-button" type="submit">Add Product</button>
+      </form>
+      
+      <h1>Products</h1>
+      <div class="orders">
+         <table class="orders-table">
+            <tr>
+               <th class="headers">PRODUCTS</th>
+            </tr>
+            <% products.forEach(product => {%>
+            <form action="/shop/delete-product" method="POST">
+               <input type="hidden" value="<%= product.title %>" name="title">
+               <input type="hidden" value="<%= product.description %>" name="description">
+               <input type="hidden" value="<%= product.imagepath %>" name="imagepath">
+               <tr>
+                  <th><%= product.title %></th>
+                  <th><button class="delete-button" type = "submit">Delete</button></th>
+               </tr>
+            </form>
+            <% });%>
+         </table>
+      </div>
+      
+      
+      <h1>Orders</h1>
+      <div class="orders">
+         <table>
+            <tr>
+               <th class="headers">ORDERS</th>
+               <th class="headers">CLIENT ID</th>
+               <th class="headers">PRoduct ID</th>
+             </tr>
+         <% orders.forEach(order => {%>
+         <form action="/shop/delete-order" method ='POST'>
+         <input type="hidden" value="<%= order.title %>" name="title">
+         <input type="hidden" value="<%= order.id %>" name="orderId">
+            <tr>
+              <th><%= order.title %></th>
+              <th><%= order.userId %></th>
+              <th><%= order.productId %></th>
+              <th><button class="delete-button" type = "submit">Delete</button></th>
+            </tr>
+         </form>
+         <% });%>
+      </table>
+      </div>
+   </div>   
 </body>
 </html>

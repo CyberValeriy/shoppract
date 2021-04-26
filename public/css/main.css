@@ -2,7 +2,7 @@ body{
    background-color: #151926;
    color: #C5C6C7;
    text-align: center;
-   padding: 0 13% 0 13%;
+   padding: 0 15% 0 15%;
    font-family: 'Viga', sans-serif;
 }
 
@@ -59,6 +59,17 @@ body{
    filter: blur(30px);
 }
 
+.username{
+background-color: #151926;
+width: 100%;
+position: sticky;
+top: 0;
+z-index: 9999;
+}
+.username:hover{
+   background-color: #3a4568;
+}
+
 .content{
    background-color:#1F2833;
    height: 100%;
@@ -76,49 +87,104 @@ body{
 }
 
 .second-header{
-font-size: 5rem;
-color:#45A29E;
-line-height: 0.1rem;
+   font-size: 5rem;
+   color:#45A29E;
+   line-height: 0.1rem;
 }
 
 .container{
-   padding-top: 4rem;
+   padding-top: 8rem;
    align-items: center;
    justify-content: center;
-   margin: 50px;
    
-
    display: grid;
-   grid-gap: 20px;
-   grid-template-columns: repeat(auto-fit, 400px);
+   grid-gap: 355px 30px;
+   grid-template-columns: repeat(auto-fit, 325px);
    grid-template-rows: repeat(3, 50px);
 }
 
 .container .product-div:hover{
-   background-color: #ff1493;
+   background-color: #bc13fe;
    transform: scale(1.05);
 }
 
-img{
+.product-img{
    display: block;
    margin-left: auto;
    margin-right: auto;
-   width: 70%;
+   padding: 10px;
+   height: 270px;
+   width: 300px;
+   object-fit: cover;
 }
 
 .product-div{
-   background-color: #2f5ea3;
+   background-color: #2c3552;
    height: 100%;
    width: 100%;
-   transition: 0.6s;
-   min-height: 250px;
+   transition: 0.5s;
    border-radius: 5px;
-   max-height: 300px;
+   max-height: 400px;
+   max-width: 325px;
+   overflow: hidden;
+   position: relative;
+}
+
+input{
+   color:white;
+   width: 20%;
+   border-width:0px;
+   border:none;
+   font-size: 20px;
+   background: 
+       linear-gradient(#000, #000) center bottom 5px /calc(100% - 10px) 2px no-repeat;
+    padding-left: 10px;
+   padding-bottom: 10px;
+   margin-top: 20px;
+ }
+
+ input::placeholder{
+   color: rgb(199, 199, 199);
+ }
+
+ input::-ms-input-placeholder{
+   color:#24C6DC;
+ }
+ 
+   input:focus{
+   outline: none;
+   background: 
+   linear-gradient(#24C6DC,#24C6DC) center bottom 5px /calc(100% - 10px) 2px no-repeat;
+ }
+
+
+.btn {background-image: linear-gradient(to right, #24C6DC 0%, #514A9D  51%, #24C6DC  100%)}
+ .btn {
+ padding: 5px 20px;
+ margin-top: 20px;
+ text-align: center;
+ text-transform: uppercase;
+ transition: 0.5s;
+ background-size: 200% auto;
+ color: white;            
+ border-radius: 30px;
+ border-style: hidden;
+ display: inline;
+ font-size: 20px;
+ }
+
+.filter{
+   margin-top: 20px;
+   background-color:#1F2833;
+   color:white;
+   font-size: 20px;
 }
 
 .product, .product-price{
    align-self: center;
    justify-self: center;
+   padding: 0;
+   margin: 0 0 5px 0;
 }
 
 a:link{
@@ -135,16 +201,44 @@ a{
 
 .main-text{
    text-align: justify;
-   margin-bottom: 5rem;
+   margin: 5em 10% 2em 10%;
+   font-size: 32px;
+   letter-spacing: 1px;
+   line-height: 45px;
+}
+
+.main-text span{
+   font-size: 74px;
+   font-weight: 300;
+   color: #66FCF1;
+}
+
+.list-filter{
+margin-bottom: 4rem;
+}
+
+.contacts{
+   position: relative;
+   width: 100%;
+   padding: 0;
+   margin: 0;
+   display: block;
+}
+
+.contacts .map{
+   border: 0;
+   width: 350px;
+   height: 250px;
+   border-radius: 5px;
    margin-left: 10%;
-   margin-right: 10%;
+   float: left;
 }
 
 header{
    display: flex;
    position: relative;
    width: 100%;
-   height: 250px;
+   height: 200px;
    overflow: hidden;
    border-radius: 20px 20px 0 0;
 }
@@ -155,8 +249,8 @@ header .upperWave{
    height: 100%;
    left: 0;
    width: 100%;
-   background-image: url(upperWave.png);
-   background-size: 1000px 250px;
+   background-image: url(images/upperWave.png);
+   background-size: 1000px 200px;
 }
 
 header .upperWave.wave1{
@@ -206,7 +300,7 @@ footer .lowerWave{
    height: 100%;
    left: 0%;
    width: 100%;
-   background-image: url(lowerWave.png);
+   background-image: url(images/lowerWave.png);
    background-size: 1000px 250px;
 }
 
@@ -277,6 +371,8 @@ footer .lowerWave.wave4{
    .container {
      display: flex;
      flex-direction: column;
+     grid-gap: 15px;
+     margin-bottom: 100px;
    }
    .product-div{
       max-width: 500px;
@@ -308,4 +404,63 @@ footer .lowerWave.wave4{
          text-align: center;
          padding: 0 0.5rem 0 1rem;
       }
+}
+
+.e-mail{
+   padding-top: 40px;
+   display: block;
+   position: relative;
+}
+
+.e-mail h2{
+   position: relative;
+   color: #fff;
+   font-weight: 300;
+}
+
+.e-mail h2::before{
+   content: url(images/mail.png);
+   position: relative;
+   top: 5px;
+   left: -15px;
+}
+
+.phone{
+   margin: 0;
+   padding: 0;
+   display: block;
+   position: relative;
+}
+
+.phone h2{
+   position: relative;
+   color: #fff;
+   margin: 0;
+   font-weight: 300;
+}
+
+.phone h2::before{
+   content: url(images/phone-call.png);
+   position: relative;
+   left: -15px;
+   top: 5px;
+}
+
+.instagram{
+   display: inline-block;
+   position: relative;
+   top: 10px;
+}
+
+.facebook{
+   display: inline-block;
+   position: relative;
+   top: 10px;
+   padding: 5px;
+}
+
+.linkedIn{
+   display: inline-block;
+   position: relative;
+   top: 10px;
 }

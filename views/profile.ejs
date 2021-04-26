@@ -1,0 +1,45 @@
+<%- include('./includes/head.ejs')%>
+   <link rel="stylesheet" href="/css/profile.css">
+   <script src="js/delete-cookie.js"></script>
+   <title>Document</title>
+</head>
+<body>
+
+   <a href="/shop"><button class="other-buttons">Go back</button></a> 
+
+   <form class="form-logout" action="/profiles/logOut" method="POST">
+      <a href="/">
+         <button id="logOut" class = "logOut-button" type="submit">Log Out</button>
+      </a>
+   </form>
+
+   <div class="content">
+   <h1><%= profile.fname %> <%= profile.lname%></h1>
+   <p>Email:<%= profile.email %></p>
+   <p>Number:<%= profile.phone %></p>
+<label for="Products">Cart</label>
+<table>
+<tr>
+   <th>TITLE</th>
+   <th>PRICE</th>
+   <th>QUANTITY</th>
+</tr>
+   <% orders.forEach((order)=>{%>
+      
+<form action="/profiles/user/delete-order" method="POST">
+<input type="text" hidden value="<%= order.productId %>" name="productId">
+<input type="text" hidden value="<%= order.id %>" name="orderid">
+<input type="text" hidden value="<%= profile.id %>" name="userId">
+<tr>
+<th><%= order.title %></th>
+<th><%= order.price %></th>
+<th><%= order.quantity %></th>
+<th><button class="other-buttons" type="submit">Delete</button></th>
+</tr>
+</form>
+
+<% }) %>
+</table>
+</div>
+</body>
+</html>

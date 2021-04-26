@@ -3,21 +3,24 @@ const router = express.Router();
 const shopController = require('../controllers/shop-contr');
 const orderController = require('../controllers/orders');
 const adminController = require('../controllers/admin');
+const isAuth = require('../middleware/is-auth');
+// const cors = require('cors');
 
-router.get('',shopController.shopHandler);
+router.get('',isAuth,shopController.shopHandler);
 
-router.get('/product/:productID',shopController.productRender);
+router.post('',isAuth,shopController.postShop);
 
-router.post('/product/buy/:productID',shopController.postBuyProduct);
+router.get('/product/:productID',isAuth,shopController.productRender);
 
-router.post('/confirmed',orderController.postConfirmed);
+router.post('/product/buy/:productID',isAuth,orderController.postBuyProduct);
 
-router.get('/admin-panel',adminController.getAdmin);
+router.get('/admin-panel',adminController.getAdmin);//admin
 
-router.post('/add-new-product',adminController.postAdminAddProduct);
+router.post('/add-new-product',adminController.postAdminAddProduct);//admin
 
-router.post('/delete-product',adminController.postADminDeleteProduct);
+router.post('/delete-product',adminController.postADminDeleteProduct);//admin
 
-router.post('/delete-order/',adminController.postADminDeleteOrder);
+router.post('/delete-order/',adminController.postADminDeleteOrder); //admin
+
 
 module.exports = router;

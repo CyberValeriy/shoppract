@@ -1,0 +1,68 @@
+body{
+   background-color: #151926;
+   color: #C5C6C7;
+   text-align: left;
+   font-family: 'Viga', sans-serif;
+}
+h1{
+   color:#755bea;
+}
+label{
+   color:#755bea;
+   font-size: 25px;
+}
+.content{
+   padding-left: 20px;
+   padding-bottom: 20px;
+   background-color:#1F2833;
+   height: 100%;
+   overflow: hidden;
+   border-radius: 20px; 
+   box-shadow: 10px 0 10px 5px rgba(0, 0, 0, 0.2), -10px 0 10px 5px rgba(0, 0, 0, 0.2);
+   align-items: center;
+}
+
+table{
+   text-align: center;
+   border: 1px solid white;
+}
+
+.other-buttons{
+   font-size: 10px;
+   letter-spacing: 1px;
+   border-radius: 40px;
+   background: linear-gradient(90deg, #755bea, #ff72c0);
+   color: #fff;
+   width: 80px;
+   height: 30px;
+   border: 0;
+   transition: 0.5s;
+   margin: 10px;
+}
+
+.other-buttons:hover{
+   cursor: pointer;
+   transform: scale(1.1);
+}
+
+.logOut-button{
+   font-size: 10px;
+   letter-spacing: 1px;
+   border-radius: 40px;
+   background: linear-gradient(90deg, #f73131, #d33a8e);
+   color: #fff;
+   width: 80px;
+   height: 30px;
+   border: 0;
+   transition: 0.5s;
+   margin: 10px;
+}
+
+.logOut-button:hover{
+   cursor: pointer;
+   transform: scale(1.1);
+}
+
+.form-logout{
+   display: inline;
+}

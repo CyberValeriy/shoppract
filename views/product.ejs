@@ -6,10 +6,11 @@
 
 <body>
    <h1><%= product.title %></h1>
-   <img src="<%= product.imageURL %>" alt="">
+   <img src="<%= product.imagepath %>" alt="<%= product.title %>">
    <h1><%= product.description %></h1>
    <h1><%= product.price %>$</h1>
    <form action="buy/<%= product.id %>" method="POST">
+   <input type="text" hidden value="<%= product.id %>" name="prodID">
    <button type="submit">BUY</button>
    </form>
 </body>
